@@ -124,7 +124,6 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
         </Button>
       </UserOptions>
 
-      <Copyright className="ml-2" />
     </div>
   );
 };
