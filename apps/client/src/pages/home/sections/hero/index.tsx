@@ -1,7 +1,7 @@
 import { t } from "@lingui/macro";
-import { ArrowRight } from "@phosphor-icons/react";
-import { Badge, buttonVariants } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
+//import { ArrowRight } from "@phosphor-icons/react";
+//import { Badge, buttonVariants } from "@reactive-resume/ui";
+//import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
@@ -22,6 +22,7 @@ export const HeroSection = () => (
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
       >
+        {/*
         <div className="hidden items-center gap-x-4 sm:flex">
           <Badge>{t`Version 4`}</Badge>
 
@@ -33,16 +34,17 @@ export const HeroSection = () => (
             <ArrowRight />
           </a>
         </div>
+        */}
 
         <div className="mt-10 space-y-2">
           <h6 className="text-base font-bold tracking-wide">{t`Finally,`}</h6>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            {t`A free and open-source resume builder`}
+            {t`A resume builder`}
           </h1>
         </div>
 
         <p className="prose prose-base prose-zinc mt-6 text-lg leading-8 dark:prose-invert">
-          {t`A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.`}
+          {t`A resume builder that simplifies the process of creating, updating, and sharing your resume.`}
         </p>
 
         <div className="mt-10 flex items-center gap-x-8">
@@ -61,8 +63,8 @@ export const HeroSection = () => (
               <img
                 width={3600}
                 height={2078}
-                src="/screenshots/builder.jpg"
-                alt="Reactive Resume - Screenshot - Builder Screen"
+                src="/screenshots/builder-2.png"
+                alt="Hi Resume - Screenshot - Builder Screen"
                 className="w-[76rem] rounded-lg bg-background/5 shadow-2xl ring-1 ring-foreground/10"
               />
             </Tilt>

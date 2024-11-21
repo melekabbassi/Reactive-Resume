@@ -19,7 +19,8 @@ import { Button, ScrollArea, Separator } from "@reactive-resume/ui";
 import { Fragment, useRef } from "react";
 import { Link } from "react-router-dom";
 
-import { Icon } from "@/client/components/icon";
+//import { Icon } from "@/client/components/icon";
+import { Logo } from "@/client/components/logo";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
 import { useResumeStore } from "@/client/stores/resume";
@@ -30,13 +31,13 @@ import { SectionIcon } from "./sections/shared/section-icon";
 import { SummarySection } from "./sections/summary";
 
 export const LeftSidebar = () => {
-  const containterRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const addSection = useResumeStore((state) => state.addSection);
   const customSections = useResumeStore((state) => state.resume.data.sections.custom);
 
   const scrollIntoView = (selector: string) => {
-    const section = containterRef.current?.querySelector(selector);
+    const section = containerRef.current?.querySelector(selector);
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -45,7 +46,8 @@ export const LeftSidebar = () => {
       <div className="hidden basis-12 flex-col items-center justify-between bg-secondary-accent/30 py-4 sm:flex">
         <Button asChild size="icon" variant="ghost" className="size-8 rounded-full">
           <Link to="/dashboard">
-            <Icon size={14} />
+           {/*<Icon size={14} />*/}
+           <Logo size={24} />
           </Link>
         </Button>
 
@@ -161,7 +163,7 @@ export const LeftSidebar = () => {
       </div>
 
       <ScrollArea orientation="vertical" className="h-screen flex-1 pb-16 lg:pb-0">
-        <div ref={containterRef} className="grid gap-y-6 p-6 @container/left">
+        <div ref={containerRef} className="grid gap-y-6 p-6 @container/left">
           <BasicsSection />
           <Separator />
           <SummarySection />

@@ -26,19 +26,19 @@ export const HomePage = () => {
 
         <meta
           name="description"
-          content="A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
+          content="A resume builder that simplifies the process of creating, updating, and sharing your resume."
         />
       </Helmet>
 
       <HeroSection />
-      <LogoCloudSection />
-      <StatisticsSection />
+      {/*<LogoCloudSection />
+      <StatisticsSection />*/}
       <FeaturesSection />
       <TemplatesSection />
-      <TestimonialsSection />
+      {/*<TestimonialsSection />
       <SupportSection />
       <FAQSection />
-      <ContributorsSection />
+      <ContributorsSection />*/}
     </main>
   );
 };

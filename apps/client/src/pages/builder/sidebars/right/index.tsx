@@ -18,17 +18,17 @@ import { TypographySection } from "./sections/typography";
 import { SectionIcon } from "./shared/section-icon";
 
 export const RightSidebar = () => {
-  const containterRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const scrollIntoView = (selector: string) => {
-    const section = containterRef.current?.querySelector(selector);
+    const section = containerRef.current?.querySelector(selector);
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="flex bg-secondary-accent/30">
       <ScrollArea orientation="vertical" className="h-screen flex-1 pb-16 lg:pb-0">
-        <div ref={containterRef} className="grid gap-y-6 p-6 @container/right">
+        <div ref={containerRef} className="grid gap-y-6 p-6 @container/right">
           <TemplateSection />
           <Separator />
           <LayoutSection />
@@ -46,10 +46,10 @@ export const RightSidebar = () => {
           <ExportSection />
           <Separator />
           <NotesSection />
-          <Separator />
+          {/*<Separator />
           <InformationSection />
           <Separator />
-          <Copyright className="text-center" />
+          <Copyright className="text-center" />*/}
         </div>
       </ScrollArea>
 
@@ -120,13 +120,13 @@ export const RightSidebar = () => {
               scrollIntoView("#notes");
             }}
           />
-          <SectionIcon
+          {/*<SectionIcon
             id="information"
             name={t`Information`}
             onClick={() => {
               scrollIntoView("#information");
             }}
-          />
+          />*/}
         </div>
 
         <ThemeSwitch size={14} />
