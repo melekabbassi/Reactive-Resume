@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useKeyboardShortcut from "use-keyboard-shortcut";
 
-import { Copyright } from "@/client/components/copyright";
+//import { Copyright } from "@/client/components/copyright";
 import { Icon } from "@/client/components/icon";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
@@ -99,8 +99,8 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
     <div className="flex h-full flex-col gap-y-4">
       <div className="ml-12 flex justify-center lg:ml-0">
         <Button asChild size="icon" variant="ghost" className="size-10 p-0">
-          <Link to="/">
-            <Icon size={24} className="mx-auto hidden lg:block" />
+          <Link to="/"  style={{ width: '200px', height: '50px' }}>
+            <Icon size={200} className="mx-auto hidden lg:block" />
           </Link>
         </Button>
       </div>
@@ -124,6 +124,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
         </Button>
       </UserOptions>
 
+      {/*<Copyright className="ml-2" />*/}
     </div>
   );
 };

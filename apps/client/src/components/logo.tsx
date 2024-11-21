@@ -13,11 +13,11 @@ export const Logo = ({ size = 32, className }: Props) => {
 
   switch (isDarkMode) {
     case false: {
-      src = "/logo/light.svg";
+      src = "/logo/logo-small-light.svg";
       break;
     }
     case true: {
-      src = "/logo/dark.svg";
+      src = "/logo/logo-small-dark.svg";
       break;
     }
   }
@@ -27,7 +27,7 @@ export const Logo = ({ size = 32, className }: Props) => {
       src={src}
       width={size}
       height={size}
-      alt="Reactive Resume"
+      alt="Hi Resume"
       className={cn("rounded-sm", className)}
     />
   );
