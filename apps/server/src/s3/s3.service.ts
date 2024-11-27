@@ -66,8 +66,6 @@ export class S3Service implements OnModuleInit {
       const headBucketCommand = new HeadBucketCommand({ Bucket: this.bucketName });
       await this.s3.send(headBucketCommand);
 
-      console.log(await this.s3.send(headBucketCommand));
-
       this.logger.log("Successfully connected to the storage service.");
     } catch (error) {
       this.logger.error("Error connecting to the storage service.", error);

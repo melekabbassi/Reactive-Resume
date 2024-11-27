@@ -25,7 +25,7 @@ export class S3Controller {
   @UseInterceptors(FileInterceptor("file"))
   async uploadFile(
     @User("id") userId: string,
-    @UploadedFile("file") file: Express.Multer.File
+    @UploadedFile() file: Express.Multer.File
   ) {
     if (!file.mimetype.startsWith("image")) {
       throw new BadRequestException("The file you uploaded doesn't seem to be an image, upload a file that ends in .jp(e)g or .png.");
