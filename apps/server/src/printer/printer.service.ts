@@ -9,7 +9,8 @@ import { PDFDocument } from "pdf-lib";
 import { connect } from "puppeteer";
 
 import { Config } from "../config/schema";
-import { StorageService } from "../storage/storage.service";
+//import { StorageService } from "../storage/storage.service";
+import { S3Service } from "../s3/s3.service";
 
 @Injectable()
 export class PrinterService {
@@ -21,7 +22,8 @@ export class PrinterService {
 
   constructor(
     private readonly configService: ConfigService<Config>,
-    private readonly storageService: StorageService,
+    //private readonly storageService: StorageService,
+    private readonly s3Service: S3Service,
     private readonly httpService: HttpService,
   ) {
     const chromeUrl = this.configService.getOrThrow<string>("CHROME_URL");
@@ -191,7 +193,7 @@ export class PrinterService {
       const buffer = Buffer.from(await pdf.save());
 
       // This step will also save the resume URL in cache
-      const resumeUrl = await this.storageService.uploadObject(
+      const resumeUrl = await this.s3Service.uploadObject(
         resume.userId,
         "resumes",
         buffer,
@@ -251,7 +253,7 @@ export class PrinterService {
     const buffer = Buffer.from(uint8array);
 
     // Generate a hash digest of the resume data, this hash will be used to check if the resume has been updated
-    const previewUrl = await this.storageService.uploadObject(
+    const previewUrl = await this.s3Service.uploadObject(
       resume.userId,
       "previews",
       buffer,

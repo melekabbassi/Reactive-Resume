@@ -1,4 +1,4 @@
-import { Module } from "@nestjs/common";
+/*import { Module } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import type {} from "multer";
 import { MinioModule } from "nestjs-minio-client";
@@ -25,4 +25,4 @@ import { StorageService } from "./storage.service";
   providers: [StorageService],
   exports: [StorageService],
 })
-export class StorageModule {}
+export class StorageModule {}*/

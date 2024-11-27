@@ -1,4 +1,4 @@
-import {
+/*import {
   BadRequestException,
   Controller,
   Put,
@@ -31,4 +31,4 @@ export class StorageController {
 
     return this.storageService.uploadObject(userId, "pictures", file.buffer, userId);
   }
-}
+}*/

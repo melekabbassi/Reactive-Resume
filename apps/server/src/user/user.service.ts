@@ -3,13 +3,15 @@ import { Prisma } from "@prisma/client";
 import { ErrorMessage } from "@reactive-resume/utils";
 import { PrismaService } from "nestjs-prisma";
 
-import { StorageService } from "../storage/storage.service";
+//import { StorageService } from "../storage/storage.service";
+import { S3Service } from "../s3/s3.service";
 
 @Injectable()
 export class UserService {
   constructor(
     private readonly prisma: PrismaService,
-    private readonly storageService: StorageService,
+    //private readonly storageService: StorageService,
+    private readonly s3Service: S3Service,
   ) {}
 
   async findOneById(id: string) {
@@ -82,7 +84,7 @@ export class UserService {
   }
 
   async deleteOneById(id: string) {
-    await this.storageService.deleteFolder(id);
+    await this.s3Service.deleteFolder(id);
 
     return this.prisma.user.delete({ where: { id } });
   }

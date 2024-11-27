@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException, Logger, OnModuleInit } from "@nestjs/common";
+/*import { Injectable, InternalServerErrorException, Logger, OnModuleInit } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { createId } from "@paralleldrive/cuid2";
 import { MinioClient, MinioService } from "nestjs-minio-client";
@@ -25,9 +25,9 @@ const PUBLIC_ACCESS_POLICY = {
       Action: ["s3:GetObject"],
       Principal: { AWS: ["*"] },
       Resource: [
-        "arn:aws:s3:::{{bucketName}}/*/pictures/*",
-        "arn:aws:s3:::{{bucketName}}/*/previews/*",
-        "arn:aws:s3:::{{bucketName}}/*/resumes/*",
+        "arn:aws:s3:::{{bucketName}}/*pictures/*", // removed / before the first *
+        "arn:aws:s3:::{{bucketName}}/*previews/*",
+        "arn:aws:s3:::{{bucketName}}/*resumes/*",
       ],
     },
   ],
@@ -175,4 +175,4 @@ export class StorageService implements OnModuleInit {
       );
     }
   }
-}
+}*/
