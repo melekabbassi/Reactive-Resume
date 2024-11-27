@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+/*import { Injectable } from "@nestjs/common";
 import { HealthIndicator, HealthIndicatorResult } from "@nestjs/terminus";
 
 import { StorageService } from "../storage/storage.service";
@@ -18,4 +18,4 @@ export class StorageHealthIndicator extends HealthIndicator {
       return this.getStatus("storage", false, { message: (error as Error).message });
     }
   }
-}
+}*/

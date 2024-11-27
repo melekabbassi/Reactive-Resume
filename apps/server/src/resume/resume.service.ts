@@ -14,14 +14,16 @@ import { PrismaService } from "nestjs-prisma";
 
 import { PrinterService } from "@/server/printer/printer.service";
 
-import { StorageService } from "../storage/storage.service";
+//import { StorageService } from "../storage/storage.service";
+import { S3Service } from "../s3/s3.service";
 
 @Injectable()
 export class ResumeService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly printerService: PrinterService,
-    private readonly storageService: StorageService,
+    //private readonly storageService: StorageService,
+    private readonly s3Service: S3Service,
   ) {}
 
   async create(userId: string, createResumeDto: CreateResumeDto) {
@@ -136,8 +138,8 @@ export class ResumeService {
   async remove(userId: string, id: string) {
     await Promise.all([
       // Remove files in storage, and their cached keys
-      this.storageService.deleteObject(userId, "resumes", id),
-      this.storageService.deleteObject(userId, "previews", id),
+      this.s3Service.deleteObject(userId, "resumes", id),
+      this.s3Service.deleteObject(userId, "previews", id),
     ]);
 
     return this.prisma.resume.delete({ where: { userId_id: { userId, id } } });

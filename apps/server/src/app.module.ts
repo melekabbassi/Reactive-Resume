@@ -15,9 +15,10 @@ import { HealthModule } from "./health/health.module";
 import { MailModule } from "./mail/mail.module";
 import { PrinterModule } from "./printer/printer.module";
 import { ResumeModule } from "./resume/resume.module";
-import { StorageModule } from "./storage/storage.module";
+//import { StorageModule } from "./storage/storage.module";
 import { TranslationModule } from "./translation/translation.module";
 import { UserModule } from "./user/user.module";
+import { S3Module } from './s3/s3.module';
 
 @Module({
   imports: [
@@ -32,7 +33,8 @@ import { UserModule } from "./user/user.module";
     AuthModule.register(),
     UserModule,
     ResumeModule,
-    StorageModule,
+    //StorageModule,
+    S3Module,
     PrinterModule,
     FeatureModule,
     TranslationModule,
@@ -69,4 +71,4 @@ import { UserModule } from "./user/user.module";
     },
   ],
 })
-export class AppModule {}
+export class AppModule { }

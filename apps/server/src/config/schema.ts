@@ -34,16 +34,29 @@ export const configSchema = z.object({
     .optional(),
 
   // Storage
-  STORAGE_ENDPOINT: z.string(),
-  STORAGE_PORT: z.coerce.number(),
-  STORAGE_REGION: z.string().default("us-east-1"),
-  STORAGE_BUCKET: z.string(),
-  STORAGE_ACCESS_KEY: z.string(),
-  STORAGE_SECRET_KEY: z.string(),
-  STORAGE_USE_SSL: z
+  /*
+   * STORAGE_ENDPOINT: z.string(),
+   * STORAGE_PORT: z.coerce.number(),
+   * STORAGE_REGION: z.string().default("us-east-1"),
+   * STORAGE_BUCKET: z.string(),
+   * STORAGE_ACCESS_KEY: z.string(),
+   * STORAGE_SECRET_KEY: z.string(),
+   * STORAGE_USE_SSL: z
     .string()
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),
+   * STORAGE_SKIP_BUCKET_CHECK: z
+    .string()
+    .default("false")
+    .transform((s) => s !== "false" && s !== "0"),
+   */
+
+  // S3
+  STORAGE_ENDPOINT: z.string(),
+  AWS_REGION: z.string().default("eu-central-1"),
+  AWS_BUCKET: z.string(),
+  AWS_ACCESS_KEY_ID: z.string(),
+  AWS_ACCESS_SECRET: z.string(),
   STORAGE_SKIP_BUCKET_CHECK: z
     .string()
     .default("false")
